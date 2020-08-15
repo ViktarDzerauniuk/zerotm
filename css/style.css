@@ -1881,6 +1881,7 @@ footer .arrow:active {
   main .about {
     padding-left: 0px;
     padding-right: 0px;
+    margin-bottom: 0;
     width: 100%;
   }
   main .about__title {
@@ -1895,7 +1896,8 @@ footer .arrow:active {
     text-transform: uppercase;
     font-size: 18px;
     padding: 12px 8px 4px;
-    border-bottom: 4px solid #252525;
+    border: 4px solid #252525;
+    border-bottom: none;
   }
   main .about__title[aria-expanded="true"] {
     border-bottom: 4px solid #fb7c56;
@@ -1971,6 +1973,7 @@ footer .arrow:active {
   main .subscribe {
     padding-left: 0px;
     padding-right: 0px;
+    margin-bottom: 0;
     width: 100%;
     background-color: #ffffff;
   }
@@ -1986,7 +1989,8 @@ footer .arrow:active {
     background-color: #ffffff;
     text-transform: uppercase;
     padding: 12px 8px 4px;
-    border-bottom: 4px solid #252525;
+    border: 4px solid #252525;
+    border-bottom: none;
   }
   main .subscribe__title[aria-expanded="true"] {
     border-bottom: 4px solid #fb7c56;
@@ -2077,7 +2081,8 @@ footer .arrow:active {
   main .popular {
     padding-left: 0px;
     padding-right: 0px;
-    padding-bottom: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0;
     width: 100%;
   }
   main .popular__title {
@@ -2093,7 +2098,8 @@ footer .arrow:active {
     background-color: #ffffff;
     text-transform: uppercase;
     padding: 12px 8px 4px;
-    border-bottom: 4px solid #252525;
+    border: 4px solid #252525;
+    border-bottom: none;
   }
   main .popular__title[aria-expanded="true"] {
     border-bottom: 4px solid #fb7c56;
@@ -2181,7 +2187,7 @@ footer .arrow:active {
     text-transform: uppercase;
     padding: 12px 8px 4px;
     margin-bottom: 0;
-    border-bottom: 4px solid #252525;
+    border: 4px solid #252525;
   }
   main .category__title[aria-expanded="true"] {
     border-bottom: 4px solid #fb7c56;
