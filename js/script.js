@@ -4,9 +4,10 @@ $(document).ready(function () {
     loop: true,
     margin: 0,
     nav: false,
+    dots: false,
     items: 4,
     autoplay: true,
-    autoplayTimeout: 1000,
+    autoplayTimeout: 3000,
     autoplayHoverPause: true,
     responsive: {
       0: {
@@ -36,16 +37,16 @@ $(document).ready(function () {
       0: {
         items: 1
       },
-      400: {
+      600: {
         items: 2
       },
-      800: {
+      900: {
         items: 3
       },
       1200: {
         items: 4
       },
-      1600: {
+      1500: {
         items: 5
       }
     }
@@ -83,24 +84,14 @@ window.addEventListener('scroll', function () {
 });
 
 
-// aside accordion for (max-width: 1024px)
-const accItems = document.getElementsByClassName("accordion-button");
-function toggleAccordion() {
-  const itemToggle = this.getAttribute('aria-expanded');
-  for (let i = 0; i < accItems.length; i++) {
-    accItems[i].setAttribute('aria-expanded', 'false');
-  }
-  if (itemToggle == 'false') {
-    this.setAttribute('aria-expanded', 'true');
-  }
-}
-[...accItems].forEach(item => item.addEventListener('click', toggleAccordion));
-
 // Open/close overlay navigation
 function openNav() {
   document.getElementById("topNavigation").classList.toggle("active");
   document.getElementById("menu-icon__top").classList.toggle("active");
   document.getElementById("menu-icon__middle").classList.toggle("active");
   document.getElementById("menu-icon__bottom").classList.toggle("active");
-  document.getElementById("logoBlock").classList.toggle("active");
+  document.getElementById("menuLink1").classList.toggle("active");
+  document.getElementById("menuLink2").classList.toggle("active");
+  document.getElementById("menuLink3").classList.toggle("active");
+  document.getElementById("menuLink4").classList.toggle("active");
 }

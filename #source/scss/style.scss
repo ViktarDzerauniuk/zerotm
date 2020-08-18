@@ -8,6 +8,8 @@ $light-gray: #f2f2f2;
 $gray: #818181;
 $white: #ffffff;
 $orange: #fb7c56;
+$orange-hover: #dd6d4b;
+$orange-active: #a3533b;
 
 html {
 	scroll-behavior: smooth;
@@ -46,6 +48,7 @@ header {
 			width: 100%;
 			z-index: 1000;
 			transition: all 0.5s ease;
+			box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.25);
 		}
 		&__menu {
 			//ul
@@ -68,7 +71,8 @@ header {
 			display: block;
 			color: $white;
 			font-size: 18px;
-			padding: 19px 16px 14px 16px;
+			padding: 16px;
+			padding-top: 17px;
 			line-height: 1.5;
 			text-transform: uppercase;
 			transition: all 0.5s;
@@ -107,29 +111,30 @@ header {
 			height: 36px;
 			width: 36px;
 			border-radius: 50%;
-			background-color: $light-gray !important;
+			color: $orange;
+			background-color: $white !important;
 			transition: all 0.5s;
+			svg {
+				margin: 6px 0 0 6px;
+				transition: all 0.5s;
+			}
 			&:hover {
 				transform: scale(1.1);
-				box-shadow: 0px 0px 10px 1px $orange;
+				box-shadow: 0px 0px 10px 1px $gray;
+				background-color: $orange !important;
+				svg {
+					fill: $white;
+				}
 			}
 			&:active {
 				transform: scale(1.05);
-				box-shadow: 0px 0px 5px 1px $orange;
+				box-shadow: 0px 0px 5px 1px $gray;
 			}
 			&:nth-child(1) {
-				background: url("../img/logo/facebook.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
 				margin-right: 16px;
 			}
 			&:nth-child(2) {
-				background: url("../img/logo/twitter.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
 				margin-right: 16px;
-			}
-			&:nth-child(3) {
-				background: url("../img/logo/dribbble.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
 			}
 		}
 	}
@@ -137,11 +142,9 @@ header {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 120px;
-		margin-top: 60px;
 		&__img {
-			width: 195px;
-			height: 83px;
+			width: 117px;
+			height: 50px;
 			background: url("../img/zero-logo.png") center center / cover no-repeat;
 		}
 	}
@@ -152,6 +155,7 @@ main {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			margin-top: 60px;
 		}
 		&__item {
 			display: flex;
@@ -162,6 +166,7 @@ main {
 			height: 550px;
 			flex: 1 1 auto;
 			background-color: $white;
+			transition: 0.2s all;
 			&:hover {
 				background-color: $orange;
 				.clothing-collection__description {
@@ -175,6 +180,17 @@ main {
 					&::before {
 						background-color: $orange;
 					}
+				}
+			}
+			&:active {
+				.clothing-collection__description {
+					color: $black;
+				}
+				.clothing-collection__br {
+					background-color: $black;
+				}
+				.clothing-collection__title {
+					color: $black;
 				}
 			}
 		}
@@ -214,6 +230,7 @@ main {
 				transform: rotate(-45deg);
 				left: calc(50% - 7.5px);
 				top: -35.5px;
+				transition: 0.2s all;
 			}
 		}
 		&__br {
@@ -236,9 +253,7 @@ main {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 24px;
-		margin-left: 16px;
-		margin-right: 16px;
+		padding: 16px;
 	}
 
 	.posts__wrapper {
@@ -285,10 +300,10 @@ main {
 			padding: 2px;
 			transition: all 0.2s;
 			&:hover {
-				box-shadow: 0px 0px 10px 3px $orange;
+				text-decoration: underline;
 			}
 			&:active {
-				box-shadow: 0px 0px 5px 1px $orange;
+				color: $orange-active;
 			}
 		}
 		.right-arrow {
@@ -311,35 +326,42 @@ main {
 		max-width: 1000px;
 		flex: 1 1 auto;
 		margin-bottom: 24px;
-		&:nth-child(1) .post__img {
+
+		&:nth-child(1) .post__img-link {
 			background: url("../img/posts/1.jpg") center center / cover no-repeat;
 		}
-		&:nth-child(2) .post__img {
+		&:nth-child(2) .post__img-link {
 			background: url("../img/posts/2.jpg") center center / cover no-repeat;
 		}
-		&:nth-child(3) .post__img {
+		&:nth-child(3) .post__img-link {
 			background: url("../img/posts/3.jpg") center center / cover no-repeat;
 		}
-		&:nth-child(4) .post__img {
+		&:nth-child(4) .post__img-link {
 			background: url("../img/posts/4.jpg") center center / cover no-repeat;
 		}
-		&:nth-child(5) .post__img {
+		&:nth-child(5) .post__img-link {
 			background: url("../img/posts/5.jpg") center center / cover no-repeat;
 		}
-		&__img {
+		&__img-wrapper {
 			margin-bottom: 8px;
 			width: 100%;
 			height: 100%;
+			padding-left: 16px;
+			padding-right: 16px;
+			margin-top: 16px;
+		}
+		&__text-wrapper {
+			padding-left: 16px;
+			padding-right: 16px;
 		}
 		&__title {
 			font-size: 24px;
 			font-weight: 600;
 			margin-bottom: 18px;
-			padding-left: 16px;
-			padding-right: 16px;
+			line-height: 1.5;
 		}
 		&__img-link {
-			display: block;
+			display: flex;
 			height: 100%;
 			width: 100%;
 		}
@@ -351,7 +373,7 @@ main {
 			&:hover {
 				color: $orange;
 				&:active {
-					color: $gray;
+					color: $orange-active;
 				}
 			}
 		}
@@ -366,10 +388,10 @@ main {
 				transition: all 0.2s;
 				padding: 2px;
 				&:hover {
-					box-shadow: 0px 0px 10px 3px $orange;
+					text-decoration: underline;
 				}
 				&:active {
-					box-shadow: 0px 0px 5px 1px $orange;
+					color: $orange-active;
 				}
 			}
 		}
@@ -400,9 +422,7 @@ main {
 			font-weight: 500;
 			letter-spacing: 0.35px;
 			color: $black;
-			padding-bottom: 16px;
-			padding-left: 16px;
-			padding-right: 16px;
+			margin-bottom: 16px;
 		}
 		&__socials {
 			display: flex;
@@ -410,46 +430,36 @@ main {
 			align-items: center;
 			border-top: 1px dashed $gray;
 			width: 100%;
-			padding-top: 28px;
-			padding-bottom: 28px;
+			padding: 16px;
 		}
+
 		&__social-link {
-			height: 40px;
-			width: 40px;
+			height: 36px;
+			width: 36px;
 			border-radius: 50%;
-			background-color: $light-gray !important;
+			color: $orange;
+			background-color: $white !important;
+			border: 1px solid $light-gray;
 			transition: all 0.5s;
+			margin-right: 8px;
+			svg {
+				margin: 5px 0 0 0px;
+				transition: all 0.5s;
+			}
 			&:hover {
 				transform: scale(1.1);
-				box-shadow: 0px 0px 10px 1px $orange;
+				box-shadow: 0px 0px 10px 1px $gray;
+				background-color: $orange !important;
+				svg {
+					fill: $white;
+				}
 			}
 			&:active {
 				transform: scale(1.05);
-				box-shadow: 0px 0px 5px 1px $orange;
+				box-shadow: 0px 0px 5px 1px $gray;
 			}
-			&:nth-child(1) {
-				background: url("../img/logo/facebook.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
-				margin-right: 8px;
-			}
-			&:nth-child(2) {
-				background: url("../img/logo/twitter.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
-				margin-right: 8px;
-			}
-			&:nth-child(3) {
-				background: url("../img/logo/viber.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
-				margin-right: 8px;
-			}
-			&:nth-child(4) {
-				background: url("../img/logo/dribbble.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
-				margin-right: 8px;
-			}
-			&:nth-child(5) {
-				background: url("../img/logo/pinterest.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}
@@ -466,40 +476,43 @@ main {
 			flex: 1 1 auto;
 			margin-bottom: 24px;
 		}
-		&__img {
+		&__img-wrapper {
 			width: 100%;
 			height: 504px;
-			background: url("../img/posts/1.jpg") center center / cover no-repeat;
-			margin-bottom: 24px;
+			padding-left: 16px;
+			padding-right: 16px;
+			margin-top: 16px;
+			margin-bottom: 16px;
 		}
-		&__text-block {
+		&__img {
+			width: 100%;
+			height: 100%;
+			background: url("../img/posts/1.jpg") center center / cover no-repeat;
+		}
+		&__text-wrapper {
+			padding-left: 16px;
+			padding-right: 16px;
 			h2 {
 				font-size: 18px;
 				font-weight: 600;
 				color: $black;
-				margin-bottom: 18px;
-				padding-left: 16px;
-				padding-right: 16px;
+				margin-bottom: 16px;
 			}
 		}
 		&__title {
 			font-size: 24px;
 			font-weight: 600;
 			color: $black;
-			padding-left: 16px;
-			padding-right: 16px;
 			text-align: center;
+			margin-bottom: 16px;
 		}
 		&__cat-date-wrapper {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding-left: 16px;
-			padding-right: 16px;
 			vertical-align: middle;
 			line-height: 2.5;
-			margin-top: 24px;
-			margin-bottom: 24px;
+			margin-bottom: 16px;
 		}
 		&__category {
 			font-family: Lora;
@@ -537,9 +550,7 @@ main {
 			font-weight: 500;
 			letter-spacing: 0.35px;
 			color: $black;
-			padding-bottom: 16px;
-			padding-left: 16px;
-			padding-right: 16px;
+			margin-bottom: 16px;
 		}
 		&__text-intrest {
 			font-family: Lora;
@@ -562,6 +573,43 @@ main {
 				width: 24px;
 				height: 5px;
 				background-color: $orange;
+			}
+		}
+		.post__socials {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-top: 1px dashed $gray;
+			width: 100%;
+			padding: 16px;
+		}
+		.post__social-link {
+			height: 36px;
+			width: 36px;
+			border-radius: 50%;
+			color: $orange;
+			background-color: $white !important;
+			border: 1px solid $light-gray;
+			transition: all 0.5s;
+			margin-right: 8px;
+			svg {
+				margin: 5px 0 0 5px;
+				transition: all 0.5s;
+			}
+			&:hover {
+				transform: scale(1.1);
+				box-shadow: 0px 0px 10px 1px $gray;
+				background-color: $orange !important;
+				svg {
+					fill: $white;
+				}
+			}
+			&:active {
+				transform: scale(1.05);
+				box-shadow: 0px 0px 5px 1px $gray;
+			}
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}
@@ -645,6 +693,7 @@ main {
 		flex-direction: column;
 
 		&__title-wrapper {
+			margin-top: 60px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -756,12 +805,12 @@ main {
 
 		&__map {
 			background-color: $white;
-			padding: 24px;
+			padding: 16px;
 			margin-bottom: 24px;
 			display: flex;
 			flex: 1 1 100%;
 			iframe {
-				width: 976px;
+				width: 992px;
 				height: 480px;
 			}
 		}
@@ -771,9 +820,11 @@ main {
 			align-items: center;
 			flex-direction: column;
 			background-color: $white;
-			margin-bottom: 24px;
+			margin-bottom: 16px;
 			flex: 1 1 100%;
 			width: 1024px;
+			padding-left: 16px;
+			padding-right: 16px;
 		}
 		&__message-title {
 			font-weight: bold;
@@ -784,26 +835,27 @@ main {
 			color: $black;
 			text-transform: uppercase;
 			border-bottom: 4px solid $orange;
-			padding-top: 32px;
-			padding-bottom: 4px;
-			padding-left: 8px;
-			padding-right: 8px;
-			margin-bottom: 24px;
+			padding: 16px 8px 4px 8px;
+			margin-bottom: 16px;
 		}
 		&__message-form {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			width: 50%;
 		}
 		form {
 			display: flex;
+			font-family: Lora;
+			width: 100%;
 			input[type="text"] {
 				display: inline-block;
 				border: 2px solid $light-gray;
-				width: 480px;
+				width: 100%;
 				margin-bottom: 24px;
 				padding: 12px;
+				text-transform: capitalize;
 				&:placeholder {
 					color: $light-gray;
 				}
@@ -814,7 +866,8 @@ main {
 			input[type="email"] {
 				display: inline-block;
 				border: 2px solid $light-gray;
-				width: 480px;
+				text-transform: capitalize;
+				width: 100%;
 				margin-bottom: 24px;
 				padding: 12px;
 				&:placeholder {
@@ -826,28 +879,31 @@ main {
 			}
 			button {
 				display: inline-block;
-				border: 2px solid $light-gray;
 				border-radius: 3px;
 				background-color: $orange;
-				width: 480px;
+				color: $white;
+				text-transform: uppercase;
+				font-family: Lora;
+				font-weight: bold;
+				letter-spacing: 0.7px;
+				width: 100%;
 				padding: 12px;
-				margin-bottom: 24px;
+				margin-bottom: 16px;
 				&:hover {
-					background-color: $white;
-					color: $orange;
+					background-color: $orange-hover;
 				}
 				&:active {
-					color: $black;
+					background-color: $orange-active;
 				}
 			}
 			textarea {
 				border: 2px solid $light-gray;
-				width: 480px;
-				height: 190px;
-				margin-bottom: 24px;
+				width: 50%;
+				height: 178px;
+				margin-bottom: 16px;
 				padding: 12px;
 				resize: none;
-				margin-left: 32px;
+				margin-left: 16px;
 				&:placeholder {
 					color: $light-gray;
 				}
@@ -866,27 +922,26 @@ main {
 			align-items: center;
 			flex-direction: column;
 			text-align: center;
-			margin-left: 28px;
+			margin-left: 16px;
 			width: 370px;
 			flex: 0 0 auto;
 		}
 		&__about {
-			margin-bottom: 24px;
+			margin-bottom: 16px;
 		}
 		&__subscribe {
-			margin-bottom: 24px;
+			margin-bottom: 16px;
 		}
 		&__popular {
-			margin-bottom: 24px;
+			margin-bottom: 16px;
 		}
 		&__category {
-			margin-bottom: 24px;
+			margin-bottom: 16px;
 		}
 	}
 	.about {
 		background-color: $white;
-		padding-left: 24px;
-		padding-right: 24px;
+		padding: 16px;
 		&__title {
 			display: inline-block;
 			font-family: Oswald;
@@ -895,14 +950,15 @@ main {
 			letter-spacing: 0.35px;
 			color: $black;
 			text-transform: uppercase;
-			padding: 28px 12px 4px;
+			padding: 0 12px 4px 12px;
+			margin-bottom: 16px;
 			border-bottom: 4px solid $black;
 		}
 		&__img {
 			width: 100%;
 			height: 240px;
+			margin-bottom: 16px;
 			background: url("../img/footer/4.jpg") center center / cover no-repeat;
-			margin-top: 24px;
 		}
 		&__text {
 			font-size: 14px;
@@ -911,13 +967,11 @@ main {
 			line-height: 1.5;
 			letter-spacing: 0.35px;
 			color: $black;
-			padding: 32px 16px;
 		}
 	}
 	.subscribe {
 		background-color: $orange;
-		padding-left: 24px;
-		padding-right: 24px;
+		padding: 16px;
 		&__title {
 			display: inline-block;
 			font-family: Oswald;
@@ -926,7 +980,8 @@ main {
 			letter-spacing: 0.35px;
 			color: $white;
 			text-transform: uppercase;
-			padding: 28px 12px 4px;
+			padding: 0 12px 4px 12px;
+			margin-bottom: 16px;
 			border-bottom: 4px solid $white;
 		}
 		&__text {
@@ -935,11 +990,7 @@ main {
 			line-height: 1.5;
 			text-align: left;
 			color: $white;
-			padding-top: 24px;
-			padding-bottom: 16px;
-		}
-		&__form {
-			margin-bottom: 32px;
+			margin-bottom: 16px;
 		}
 		&__email {
 			display: block;
@@ -951,7 +1002,7 @@ main {
 			font-size: 14px;
 			text-align: left;
 			padding: 16px 12px;
-			margin-bottom: 12px;
+			margin-bottom: 16px;
 			&:placeholder {
 				color: $light-gray;
 			}
@@ -964,6 +1015,7 @@ main {
 			display: block;
 			width: 100%;
 			background-color: $black;
+			font-family: Lora;
 			font-weight: bold;
 			letter-spacing: 0.7px;
 			color: $white;
@@ -976,13 +1028,14 @@ main {
 			&:active {
 				color: $black;
 			}
+			&:focus {
+				border: solid 2px $gray;
+			}
 		}
 	}
 	.popular {
 		background-color: $white;
-		padding-left: 24px;
-		padding-right: 24px;
-		padding-bottom: 32px;
+		padding: 16px 16px 0 16px;
 		&__title {
 			display: inline-block;
 			font-family: Oswald;
@@ -991,14 +1044,15 @@ main {
 			letter-spacing: 0.35px;
 			color: $black;
 			text-transform: uppercase;
-			padding: 28px 12px 4px;
+			padding: 0 12px 4px 12px;
+			margin-bottom: 16px;
 			border-bottom: 4px solid $black;
 		}
 		&__item {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-top: 24px;
+			margin-bottom: 16px;
 			&:hover .popular__item-title a {
 				color: $orange;
 				&:active {
@@ -1024,7 +1078,7 @@ main {
 		}
 		&__item-img {
 			flex: 1 1 144px;
-			height: 96px;
+			height: 111px;
 			transition: all 0.2s;
 		}
 		&__item-text-wrapper {
@@ -1037,7 +1091,7 @@ main {
 			font-weight: 600;
 			line-height: 1.5;
 			text-align: left;
-			padding-bottom: 16px;
+			margin-bottom: 16px;
 			a {
 				color: $black;
 				transition: all 0.2s;
@@ -1059,9 +1113,7 @@ main {
 	}
 	.category {
 		background-color: $white;
-		padding-left: 24px;
-		padding-right: 24px;
-		padding-bottom: 8px;
+		padding: 16px 16px 0 16px;
 		width: 100%;
 		&__title {
 			display: inline-block;
@@ -1071,15 +1123,15 @@ main {
 			letter-spacing: 0.35px;
 			color: $black;
 			text-transform: uppercase;
-			padding: 28px 12px 4px;
+			padding: 0 12px 4px 12px;
+			margin-bottom: 16px;
 			border-bottom: 4px solid $black;
-			margin-bottom: 24px;
 		}
 		&__item {
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
-			padding-bottom: 16px;
+			margin-bottom: 16px;
 		}
 
 		&__arrow {
@@ -1100,19 +1152,20 @@ main {
 			padding: 2px;
 			transition: all 0.2s;
 			&:hover {
-				box-shadow: 0px 0px 10px 3px $orange;
+				text-decoration: underline;
 			}
 			&:active {
-				box-shadow: 0px 0px 5px 1px $orange;
+				color: $orange-active;
 			}
 		}
 	}
 }
 
 footer {
+	margin-top: 24px;
 	background-color: $white;
 	.follow-instagram {
-		padding-top: 24px;
+		padding: 16px 16px 0 16px;
 		&__title {
 			font-family: Oswald;
 			font-size: 14px;
@@ -1120,16 +1173,17 @@ footer {
 			line-height: 2;
 			text-transform: uppercase;
 			text-align: center;
+			margin-bottom: 16px;
 			a {
 				color: $orange;
 				border-radius: 4px;
 				transition: all 0.2s;
 				padding: 2px;
 				&:hover {
-					box-shadow: 0px 0px 10px 3px $orange;
+					text-decoration: underline;
 				}
 				&:active {
-					box-shadow: 0px 0px 5px 1px $orange;
+					color: $orange-active;
 				}
 			}
 		}
@@ -1137,32 +1191,25 @@ footer {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-top: 24px;
-			padding-left: 16px;
-			padding-right: 16px;
 			a {
 				display: block;
 				overflow: hidden;
 				transition: 0.75s all;
-				&:hover {
-					box-shadow: 0px 0px 10px 3px $black;
-				}
-				&:active {
-					box-shadow: 0px 0px 5px 1px $black;
-				}
+			}
+			.owl-dots .owl-dot.active span {
+				background: $orange;
 			}
 		}
 		&__img {
 			max-width: 280px;
 			height: 280px;
 			transition: 0.75s all;
+			margin: 0 auto;
 			&:hover {
 				transform: scale(1.1);
-				box-shadow: 0px 0px 10px 3px $black;
 			}
 			&:active {
 				transform: scale(1.05);
-				box-shadow: 0px 0px 5px 1px $black;
 			}
 		}
 		&__img-1 {
@@ -1191,47 +1238,37 @@ footer {
 			align-items: center;
 			border-bottom: 1px solid $light-gray;
 			width: 100%;
-			padding-top: 24px;
-			padding-bottom: 24px;
+			padding-top: 16px;
+			padding-bottom: 16px;
 		}
 
 		&__link {
-			height: 40px;
-			width: 40px;
+			height: 36px;
+			width: 36px;
 			border-radius: 50%;
-			background-color: $light-gray !important;
+			color: $orange;
+			background-color: $white !important;
+			border: 1px solid $light-gray;
 			transition: all 0.5s;
+			margin-right: 8px;
+			svg {
+				margin: 5px 0 0 5px;
+				transition: all 0.5s;
+			}
 			&:hover {
 				transform: scale(1.1);
-				box-shadow: 0px 0px 10px 1px $orange;
+				box-shadow: 0px 0px 10px 1px $gray;
+				background-color: $orange !important;
+				svg {
+					fill: $white;
+				}
 			}
 			&:active {
 				transform: scale(1.05);
-				box-shadow: 0px 0px 5px 1px $orange;
+				box-shadow: 0px 0px 5px 1px $gray;
 			}
-			&:nth-child(1) {
-				background: url("../img/logo/facebook.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
-				margin-right: 8px;
-			}
-			&:nth-child(2) {
-				background: url("../img/logo/twitter.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
-				margin-right: 8px;
-			}
-			&:nth-child(3) {
-				background: url("../img/logo/viber.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
-				margin-right: 8px;
-			}
-			&:nth-child(4) {
-				background: url("../img/logo/dribbble.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
-				margin-right: 8px;
-			}
-			&:nth-child(5) {
-				background: url("../img/logo/pinterest.svg") center center / cover no-repeat;
-				background-size: 24px 24px;
+			&:last-child {
+				margin-right: 0;
 			}
 		}
 	}
@@ -1242,8 +1279,7 @@ footer {
 		line-height: 2;
 		text-transform: uppercase;
 		font-weight: bold;
-		padding-top: 16px;
-		padding-bottom: 16px;
+		padding: 16px;
 		span {
 			color: $black;
 		}
@@ -1253,10 +1289,10 @@ footer {
 			transition: all 0.2s;
 			padding: 2px;
 			&:hover {
-				box-shadow: 0px 0px 10px 3px $orange;
+				text-decoration: underline;
 			}
 			&:active {
-				box-shadow: 0px 0px 5px 1px $orange;
+				color: $orange-active;
 			}
 		}
 	}
@@ -1271,18 +1307,18 @@ footer {
 		border-radius: 50%;
 		transition: 0.35s;
 		background: #ffffff;
-		box-shadow: 0px 2px 12px $orange;
 		z-index: 99999;
+		border: solid 2px $light-gray;
 		svg {
 			position: relative;
-			top: 17px;
-			left: 14px;
+			top: 16px;
+			left: 12px;
 		}
 		&:hover {
-			box-shadow: 0px 6px 25px $orange;
+			box-shadow: 0px 6px 25px $gray;
 		}
 		&:active {
-			box-shadow: 0px 1px 4px $orange;
+			box-shadow: 0px 1px 4px $gray;
 		}
 	}
 }
