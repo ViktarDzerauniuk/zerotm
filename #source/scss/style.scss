@@ -268,6 +268,8 @@ main {
 		align-items: center;
 		width: 100%;
 		margin-bottom: 24px;
+		padding-left: 16px;
+		padding-right: 16px;
 		a {
 			display: flex;
 			&.disabled {
@@ -619,6 +621,7 @@ main {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		margin-top: 60px;
 		&__title-wrapper {
 			display: flex;
 			justify-content: center;
@@ -643,10 +646,12 @@ main {
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			width: 970px;
+			max-width: 1024px;
 			background-color: $white;
 			margin-top: 32px;
 			margin-bottom: 32px;
+			padding-left: 16px;
+			padding-right: 16px;
 		}
 		&__img {
 			display: flex;
@@ -655,6 +660,8 @@ main {
 			background: url("../img/about/img@2x.jpg") center center / cover no-repeat;
 			width: 100%;
 			height: 504px;
+			margin-top: 16px;
+			margin-bottom: 16px;
 		}
 		&__photo {
 			background: url("../img/about/layer-254@2x.jpg") center center / cover no-repeat;
@@ -673,7 +680,7 @@ main {
 			letter-spacing: 0.35px;
 			color: $black;
 			text-transform: uppercase;
-			padding: 24px 12px 4px;
+			padding: 0 12px 4px;
 			border-bottom: 4px solid $black;
 		}
 		&__text {
@@ -682,7 +689,8 @@ main {
 			line-height: 1.5;
 			text-align: center;
 			color: $black;
-			padding: 24px;
+			margin-top: 16px;
+			margin-bottom: 16px;
 		}
 	}
 

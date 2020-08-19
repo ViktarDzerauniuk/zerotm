@@ -16,9 +16,9 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -27,6 +27,47 @@
     width: 100%;
     padding: 0;
     margin: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  main .category {
+    display: none;
+  }
+  main .about {
+    width: 100%;
+  }
+  main .about__text::after {
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat modi laudantium aut! Eum, accusantium.";
+  }
+  main .popular {
+    width: 100%;
+  }
+  main .popular__item-img {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+  }
+  main .popular__item:nth-child(2) .popular__item-img {
+    background: url("../img/posts/4.jpg") center top/cover no-repeat;
+  }
+  main .subscribe {
+    width: 100%;
+  }
+  main .contacts__top {
+    width: 100%;
+  }
+  main .contacts__map {
+    width: 100%;
+    height: 480px;
+  }
+  main .contacts__map iframe {
+    width: 100%;
+    height: auto;
+  }
+  main .contacts__message {
+    width: 100%;
   }
 }
 
@@ -152,28 +193,27 @@
     margin-bottom: 16px;
   }
   main .contacts__top {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-bottom: 16px;
-  }
-  main .contacts__top-item {
-    width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
   }
   main .contacts__top-text-contain {
-    height: auto;
-    padding: 0;
-    margin-left: 30vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  main .contacts__top-text {
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translateX(-8px);
+            transform: translateX(-8px);
+  }
+  main .contacts__top-ico-contain {
+    margin-bottom: 16px;
   }
   main .contacts__map {
     padding: 8px;
@@ -197,7 +237,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   main .single-post__img {
     height: 240px;
     margin-bottom: 16px;
@@ -215,9 +255,61 @@
     top: 16px;
     left: 8px;
   }
+  main .contacts__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .contacts__top-item {
+    width: 100%;
+  }
   main .contacts__top-text-contain {
-    height: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    text-align: left;
     padding: 0;
-    margin-left: 10vw;
+    margin: 0 auto;
+  }
+  main .contacts__top-ico-contain {
+    width: 96px;
+    height: 62px;
+    margin: 0;
+    margin-right: 16px;
+  }
+  main .contacts__message {
+    padding-bottom: 4px;
+  }
+  main .contacts form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .contacts form .contacts__message-form {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  main .contacts form input[type="text"] {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  main .contacts form input[type="email"] {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  main .contacts form button {
+    width: 100%;
+    margin-bottom: 16px;
+    -webkit-transform: translateY(196px);
+            transform: translateY(196px);
+  }
+  main .contacts form textarea {
+    width: 100%;
+    margin: 0;
+    -webkit-transform: translateY(-72px);
+            transform: translateY(-72px);
   }
 }
