@@ -1,2 +1,2 @@
 # zerotm
-# https://viktardzerauniuk.github.io/zerotm/
+# https://viktorderevnyuk.github.io/zerotm/
